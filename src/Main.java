@@ -10,7 +10,7 @@ public class Main {
         lessSix();
         fillDiagonal();
         lessAndMore();
-        int[] balance = {6, 4, 2, 4, 8, 2};
+        int[] balance = {10, 6, 4, 2, 8, 6};
         System.out.println("Задание №6: " + hasBalance(balance));
         int[] twist = {2, 8, 1, 5, 9};
         twistMethod(twist);
@@ -95,7 +95,7 @@ public class Main {
             resLeft += balance[x];
 
            int resRight = 0;
-            for (y = 0; y < balance.length; y++) {
+            for (y = (x+1); y < balance.length; y++) {
                 resRight += balance[y];
             }
             if (resLeft == resRight) {
@@ -108,7 +108,7 @@ public class Main {
     }
     static int twistMethod(int[] twist){
         System.out.println("Задание №7: первоночальный массив "+ Arrays.toString(twist));
-            int n = -2, x;
+            int x, n = 2;
             if (n > 0) {
                 for (x = 0; x < n; x++) {
                     twistNumberRight(twist);
@@ -117,7 +117,6 @@ public class Main {
             } else if (n < 0) {
                 for (x = n; x < 0; x++) {
                     twistNumberLeft(twist);
-
                 }
                 System.out.println("Смещаем вправо " + Arrays.toString(twist));
             }
